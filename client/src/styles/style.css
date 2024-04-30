@@ -7,6 +7,8 @@ html{
     height: 100vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: Helvetica-neue, sans-serif;
+    font-weight: 300;
 }
 
 h1 {
@@ -82,3 +84,80 @@ li{
     font-weight: 900;
     text-decoration: none;
 }
+
+
+/* APP CSS */
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  
+  }
+  
+  
+  .canvas{
+    display: grid;
+    width: 40%;
+    aspect-ratio: 9/19.5;
+    margin: 0 auto;
+    border-radius: 25px;
+  }
+  
+  .maker{
+    text-align: center;
+    padding-block-end: 1rem;
+    
+  }
+  
+  .sliders{
+    padding: 1rem;
+  }
+
+  .control__panel {
+    height: 60vh;
+    overflow-y: auto;
+    /* background-color: purple;    */
+    padding: 2rem;
+    border-radius: 25px;
+    border: white 2px solid;
+    display: flex;
+    flex-flow: column;
+  }
+  
+  .maker__title{
+    margin: 2rem auto;
+    font-weight: 200;
+    font-family: inter, sans-serif;
+    font-size: 1.3rem
+  }
+
+  .control_group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .control__name{
+    margin-left: 1.3em;
+    padding: 0;
+    font-size: 1rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 3px solid white;
+    height: 30px;
+  }
+
+  
+

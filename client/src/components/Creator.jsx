@@ -1,7 +1,7 @@
 const Creator = ({value, onValueChange}) => {
 
     return (
-        <input 
+        <input className="control__name"
             type="text" 
             value={value} 
             onChange={(e) => onValueChange(e.target.value)}

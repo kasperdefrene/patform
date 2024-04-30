@@ -1,4 +1,4 @@
-import './App.css'
+
 import Artwork from '../components/Artwork';
 import Slider from '../components/Slider';
 import ColorPicker from '../components/ColorPicker';
@@ -91,18 +91,20 @@ function App() {
       <div className='container'>
         <div className='instuctions'>
           <h1>Galaxy Wallpaper Generator &#9788;</h1>
-          <h2>change the parameters and start generating</h2>
+          <h2 className="maker__title">Change the parameters and start generating</h2>
         </div>
         
         <div className='wrapper'>
           
           <div className='control__panel'>
-            <h2>Swipe up to ...</h2>
-            <Creator onValueChange={handleNameChange}/>
+            <div className="control_group">
+              <h3 className="control__title">Swipe up to ...</h3>
+              <Creator className="control__name"onValueChange={handleNameChange}/>
+            </div>
   
-            <h2>Background</h2>
+            <h3>Background</h3>
             <ColorPicker onValueChange={handleSetBackground}/>
-            <h2>Gradient Sun</h2>
+            <h3>Gradient Sun</h3>
               <Slider label="Size" min="150" max="300" onValueChange={handleSetRadius} />
               <div className='Gradient'>
                 <p>Color One</p>
@@ -115,10 +117,10 @@ function App() {
                 <Slider label="offsetTwo" min="0" max="100" onValueChange={handleSetOffsetTwo}/>
                 <Slider label="Rotation" min="0" max="360" onValueChange={handleSetRotation}/>
               </div>
-            <h2>Earth</h2>
+            <h3>Earth</h3>
             <Slider label="Links - Rechts" min="-50" max="143" onValueChange={handleSetXPos}/>
             <Slider label="Boven - Beneden" min="-50" max="280" onValueChange={handleSetYPos}/>
-            <h2>Stars</h2>
+            <h3>Stars</h3>
             <Checkbox label="Show Stars" onValueChange={(isChecked) => setShowStars(isChecked)} />
             
             
