@@ -12,8 +12,10 @@ import { createArtwork } from '../services/artwork';
 const action = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
+  data.artworkData = JSON.parse(data.artworkData);
   console.log("formdata", data);
   await createArtwork(data);
+
   return redirect(`/`);
 };
 
@@ -93,6 +95,10 @@ function CreateArtwork() {
     setShowStars(e);
   }
 
+  const [items] = useState({
+    title: "",
+  });
+
   
     return(
       <div className='container'>
@@ -133,10 +139,10 @@ function CreateArtwork() {
             
             <Form method='POST'>
               <div>
-                <span>Title artwork</span>
+                <span>Title</span>
                 <input type="text" placeholder='Spicy Sky' name='title' defaultValue="" />
               </div>
-              <input type="hidden" name="data" defaultValue={JSON.stringify()} />
+              <input type="hidden" name="artworkData" defaultValue={JSON.stringify(items)} />
               <p>
                 <button type="submit">Save</button>
               </p>

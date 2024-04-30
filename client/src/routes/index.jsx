@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import "../styles/style.css";
 import ArtworkCard from "../components/ArtworkCard";
+import { getArtworks } from "../services/artwork";
+
+const loader = async () => {
+    const cheeses = await getArtworks();
+    return { cheeses };
+  };
 
 const Index = () => {
     return (
@@ -19,5 +25,5 @@ const Index = () => {
     );
 };
 
-
+Index.loader = loader;
 export default Index;
