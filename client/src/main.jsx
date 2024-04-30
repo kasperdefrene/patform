@@ -6,7 +6,7 @@ import Root from "./routes/root";
 import "./styles/style.css";
 import Index from "./routes";
 import ErrorPage from "./routes/error-page";
-import App from "./routes/App";
+import CreateArtwork from "./routes/createArtwork";
 import ArtworkDetail from "./routes/artworkDetail";
 import Login from "./routes/auth/login";
 import MyArtworks from './routes/myArtworks';
@@ -22,7 +22,8 @@ const router = createBrowserRouter([
       { index: true, element: <Index />, loader: Index.loader },
       {
         path: '/artwork/create',
-        element: <App />,
+        element: <CreateArtwork />,
+        action: CreateArtwork.action,
       },
       {
         path: '/artwork/my-artworks',

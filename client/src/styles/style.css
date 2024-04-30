@@ -159,5 +159,29 @@ li{
     height: 30px;
   }
 
+/* scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    padding: 1rem;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    display: none;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
   
 
