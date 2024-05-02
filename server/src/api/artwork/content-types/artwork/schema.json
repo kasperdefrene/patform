@@ -16,9 +16,41 @@
       "type": "string",
       "required": true
     },
-    "artworkData": {
-      "type": "json",
+    "gradientColorOne": {
+      "type": "string",
       "required": true
+    },
+    "gradientColorTwo": {
+      "type": "string",
+      "required": true
+    },
+    "size": {
+      "type": "integer"
+    },
+    "gradientRotation": {
+      "type": "integer"
+    },
+    "gradientOffsetOne": {
+      "type": "integer"
+    },
+    "gradientOffsetTwo": {
+      "type": "decimal"
+    },
+    "xPosition": {
+      "type": "integer"
+    },
+    "yPosition": {
+      "type": "integer"
+    },
+    "stars": {
+      "type": "boolean",
+      "required": false
+    },
+    "slogan": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
     }
   }
 }

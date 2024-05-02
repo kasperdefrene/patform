@@ -375,7 +375,17 @@ export interface ApiArtworkArtwork extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    artworkData: Attribute.JSON & Attribute.Required;
+    gradientColorOne: Attribute.String & Attribute.Required;
+    gradientColorTwo: Attribute.String & Attribute.Required;
+    size: Attribute.Integer;
+    gradientRotation: Attribute.Integer;
+    gradientOffsetOne: Attribute.Integer;
+    gradientOffsetTwo: Attribute.Decimal;
+    xPosition: Attribute.Integer;
+    yPosition: Attribute.Integer;
+    stars: Attribute.Boolean;
+    slogan: Attribute.String;
+    backgroundColor: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

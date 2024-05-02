@@ -17,6 +17,14 @@ h1 {
   font-size: 3rem;
 }
 
+ul{
+    display: flex;
+    gap: 2rem;
+    width: 50%;
+    margin: 0 auto;
+    padding: 4rem;
+}
+
 li{
     list-style-type: none;
 }

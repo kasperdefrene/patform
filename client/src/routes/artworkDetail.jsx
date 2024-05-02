@@ -1,11 +1,19 @@
 import { Link, useLoaderData } from "react-router-dom";
+import { getArtwork } from "../services/artwork";
+
+const loader = async ({params}) => {
+    const id = params.id;
+    const artwork = await getArtwork(id);
+    return {artwork};
+};
+
 
 const artworkDetail = () => {
+    const {artwork} = useLoaderData();
     return (
         <div>
             <Link to="/" className="back__button">&#8606;Back</Link>
-            <h1>Artwork detail</h1>
-            <p>Artwork detail</p>
+            <h1>{artwork.title}</h1>
             <dl>
                 <dt>Creator</dt>
                 <dd>Creator</dd>
@@ -15,5 +23,6 @@ const artworkDetail = () => {
     )
 };
 
+artworkDetail.loader = loader;
 
 export default artworkDetail;

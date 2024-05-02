@@ -97,6 +97,18 @@ function CreateArtwork() {
 
   const [items] = useState({
     title: "",
+    slogan: "",
+    backgroundColor: "",
+    size: "",
+    gradientColorOne: "",
+    gradientColorTwo: "",
+    gradientOffsetOne: "",
+    gradientOffsetTwo: "",
+    gradientRotation: "",
+    xPosition: "",
+    yPosition: "",
+    stars: ""
+
   });
 
   
@@ -110,34 +122,35 @@ function CreateArtwork() {
         <div className='wrapper'>
           
           <div className='control__panel'>
-            <div className="control_group">
-              <h3 className="control__title">Swipe up to ...</h3>
-              <Creator className="control__name"onValueChange={handleNameChange}/>
-            </div>
-  
-            <h3>Background</h3>
-            <ColorPicker onValueChange={handleSetBackground}/>
-            <h3>Gradient Sun</h3>
-              <Slider label="Size" min="150" max="300" onValueChange={handleSetRadius} />
-              <div className='Gradient'>
-                <p>Color One</p>
-                <ColorPicker label="colorOne" onValueChange={handleSetColorOne}/>
-                <p>Color Two</p>
-                <ColorPicker label="colorTwo" onValueChange={handleSetColorTwo}/>
-              </div>
-              <div className='sliders'>
-                <Slider label="offsetOne" min="0" max="100" onValueChange={handleSetOffsetOne}/>
-                <Slider label="offsetTwo" min="0" max="100" onValueChange={handleSetOffsetTwo}/>
-                <Slider label="Rotation" min="0" max="360" onValueChange={handleSetRotation}/>
-              </div>
-            <h3>Earth</h3>
-            <Slider label="Links - Rechts" min="-50" max="143" onValueChange={handleSetXPos}/>
-            <Slider label="Boven - Beneden" min="-50" max="280" onValueChange={handleSetYPos}/>
-            <h3>Stars</h3>
-            <Checkbox label="Show Stars" onValueChange={(isChecked) => setShowStars(isChecked)} />
-            
-            
             <Form method='POST'>
+              <div className="control_group">
+                <h3 className="control__title">Swipe up to ...</h3>
+                <Creator className="control__name" onValueChange={handleNameChange} name='slogan'/>
+              </div>
+    
+              <h3>Background</h3>
+              <ColorPicker onValueChange={handleSetBackground} name='backgroundColor'/>
+              <h3>Gradient Sun</h3>
+                <Slider label="Size" min="150" max="300" onValueChange={handleSetRadius} name='size'/>
+                <div className='Gradient'>
+                  <p>Color One</p>
+                  <ColorPicker label="colorOne" onValueChange={handleSetColorOne} name='gradientColorOne'/>
+                  <p>Color Two</p>
+                  <ColorPicker label="colorTwo" onValueChange={handleSetColorTwo} name='gradientColorTwo'/>
+                </div>
+                <div className='sliders'>
+                  <Slider label="offsetOne" min="0" max="100" onValueChange={handleSetOffsetOne} name='gradientOffsetOne'/>
+                  <Slider label="offsetTwo" min="0" max="100" onValueChange={handleSetOffsetTwo} name='gradientOffsetTwo'/>
+                  <Slider label="Rotation" min="0" max="360" onValueChange={handleSetRotation} name='gradientRotation'/>
+                </div>
+              <h3>Earth</h3>
+              <Slider label="Links - Rechts" min="-50" max="143" onValueChange={handleSetXPos} name='xPosition'/>
+              <Slider label="Boven - Beneden" min="-50" max="280" onValueChange={handleSetYPos} name='yPosition'/>
+              <h3>Stars</h3>
+              <Checkbox label="Show Stars" onValueChange={(isChecked) => setShowStars(isChecked)} name='stars'/>
+            
+            
+            
               <div>
                 <span>Title</span>
                 <input type="text" placeholder='Spicy Sky' name='title' defaultValue="" />

@@ -32,6 +32,7 @@ const router = createBrowserRouter([
       {
         path: '/artwork/detail/:id',
         element: <ArtworkDetail />,
+        loader: ArtworkDetail.loader,
       },
       {
         path: '/auth/login',
