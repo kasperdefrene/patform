@@ -38,6 +38,8 @@ const router = createBrowserRouter([
       {
         path: '/auth/login',
         element: <Login />,
+        action: Login.action,
+        // loader: Login.loader,
       },
       {
         path: "artwork/detail/:id/destroy",
