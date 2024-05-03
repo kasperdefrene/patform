@@ -13,10 +13,11 @@ import MyArtworks from './routes/myArtworks';
 import destroyAction from './routes/destroy';
 import Register from './routes/auth/register';
 
+
 const router = createBrowserRouter([
   {
-    path: '/',
     id: 'root',
+    path: '/',
     element: <Root />,
     loader: Root.loader,
     errorElement: <ErrorPage />,

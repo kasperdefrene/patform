@@ -5,10 +5,8 @@ const loader = async ({params}) => {
     const id = params.id;
     const artwork = await getArtwork(id);
     return {artwork};
+    
 };
-
-
-
 
 const artworkDetail = () => {
     const {artwork} = useLoaderData();

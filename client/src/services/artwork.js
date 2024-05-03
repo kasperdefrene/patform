@@ -8,7 +8,7 @@ const getArtworks = async () => {
 };
 
 const getArtwork = async (id) => {
-  const artwork = await fetchApi({ endpoint: `artworks/${id}` });
+  const artwork = await fetchApi({ endpoint: `artworks/${id}`, wrappedByKey: "data"});
   return unwrapAtributes(artwork);
 };
 
