@@ -10,6 +10,7 @@ import CreateArtwork from "./routes/createArtwork";
 import ArtworkDetail from "./routes/artworkDetail";
 import Login from "./routes/auth/login";
 import MyArtworks from './routes/myArtworks';
+import destroyAction from './routes/destroy';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
       {
         path: '/auth/login',
         element: <Login />,
+      },
+      {
+        path: "artwork/detail/:id/destroy",
+        action: destroyAction,
+        errorElement: <div>Oops! There was an error.</div>,
       },
 
     ]

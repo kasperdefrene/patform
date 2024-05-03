@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, Form } from "react-router-dom";
 import { getArtwork } from "../services/artwork";
 
 const loader = async ({params}) => {
@@ -50,7 +50,22 @@ const artworkDetail = () => {
 
                     <line x1="20" y1="250" x2="95" y2="250" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
+                <h3 className='maker'>Swipe up to {artwork.slogan}</h3>
             </div>
+            <Form
+                method="post"
+                action="destroy"
+                onSubmit={(event) => {
+                if (!confirm("Please confirm you want to delete this record.")) {
+                    event.preventDefault();
+                }
+                }}
+            >
+                <button type="submit" className="back__button">Delete</button>
+          </Form>
+          <Form action="edit">
+            <button type="submit" className="back__button">Edit</button>
+          </Form>
         </div>
     )
 };

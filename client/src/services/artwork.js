@@ -34,4 +34,13 @@ const createArtwork = async (data) => {
     }
   };
 
-export { getArtworks, getArtwork,  createArtwork }
+  export async function deleteArtwork(id) {
+    const artwork = await fetchApi(
+      { endpoint: `artworks/${id}` },
+      { method: "DELETE" }
+    );
+    if (artwork.error) throw new Error(artwork.error);
+    return true;
+  }
+
+export { getArtworks, getArtwork, createArtwork }
