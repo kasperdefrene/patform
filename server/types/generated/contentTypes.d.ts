@@ -371,7 +371,7 @@ export interface ApiArtworkArtwork extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
@@ -386,9 +386,13 @@ export interface ApiArtworkArtwork extends Schema.CollectionType {
     stars: Attribute.Boolean;
     slogan: Attribute.String;
     backgroundColor: Attribute.String;
+    owner: Attribute.Relation<
+      'api::artwork.artwork',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::artwork.artwork',
       'oneToOne',
@@ -765,6 +769,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'manyToOne',
       'plugin::users-permissions.role'
+    >;
+    artworks: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::artwork.artwork'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

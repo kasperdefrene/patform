@@ -49,6 +49,13 @@ const router = createBrowserRouter([
         action: Register.action,
       },
       {
+        path: "/auth/logout",
+        action: async () => {
+          removeAuthData();
+          return redirect("/");
+        },
+      },
+      {
         path: "artwork/detail/:id/destroy",
         action: destroyAction,
         errorElement: <div>Oops! There was an error.</div>,

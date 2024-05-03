@@ -18,8 +18,8 @@ const artworkDetail = () => {
                 <Link to="/" className="back__button">&#8606;Back</Link>
                 <h1>{artwork.title}</h1>
                 <dl>
-                    <dt>Creator</dt>
-                    <dd>Creator</dd>
+                    <dt>Created by</dt>
+                    <dd>{artwork.creator}</dd>
                 </dl>
                 <button className="back__button">Like&#9825;</button>
             </div>

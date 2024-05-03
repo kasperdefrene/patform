@@ -34,7 +34,7 @@ const ArtworkCard = ({artwork}) => {
             </div>
         <div>
             <p>{artwork.title}</p>
-            <p>Creator</p>
+            <p>{artwork.creator}</p>
         </div>
     </div>
     );
