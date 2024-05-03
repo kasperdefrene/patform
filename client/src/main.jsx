@@ -11,6 +11,7 @@ import ArtworkDetail from "./routes/artworkDetail";
 import Login from "./routes/auth/login";
 import MyArtworks from './routes/myArtworks';
 import destroyAction from './routes/destroy';
+import Register from './routes/auth/register';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
         element: <Login />,
         action: Login.action,
         loader: Login.loader,
+      },
+      {
+        path: "/auth/register",
+        element: <Register />,
+        action: Register.action,
       },
       {
         path: "artwork/detail/:id/destroy",
