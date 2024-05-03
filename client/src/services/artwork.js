@@ -1,4 +1,5 @@
 import { fetchApi, unwrapAtributes } from "./strapi";
+import { getToken } from "./auth";
 
 const getArtworks = async () => {
   const artworks = await fetchApi({ endpoint: "artworks", wrappedByKey: "data" });
@@ -22,7 +23,7 @@ const createArtwork = async (data) => {
           body: JSON.stringify({ data }),
           headers: {
             "Content-Type": "application/json",
-            // Remove the Authorization header
+            Authorization: `Bearer ${getToken()}`,
           },
         }
       );

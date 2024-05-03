@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { Form, redirect } from "react-router-dom";
 
 import { createArtwork } from '../services/artwork';
+import { getAuthData } from "../services/auth";
 
 const action = async ({ request }) => {
   const formData = await request.formData();
@@ -17,6 +18,16 @@ const action = async ({ request }) => {
   await createArtwork(data);
 
   return redirect(`/`);
+};
+
+const loader = async ({ request }) => {
+  const { user } = getAuthData();
+  if (!user) {
+    let params = new URLSearchParams();
+    params.set("from", new URL(request.url).pathname);
+    return redirect("/auth/login?" + params.toString());
+  }
+  return null;
 };
 
 function CreateArtwork() {
@@ -172,4 +183,5 @@ function CreateArtwork() {
     );
 }
 CreateArtwork.action = action;
+CreateArtwork.loader = loader;
 export default CreateArtwork; 

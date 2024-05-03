@@ -5,6 +5,11 @@ export const setAuthData = (authData) => {
   }
 };
 
+export const getToken = () => {
+    const authData = getAuthData();
+    return authData.jwt;
+};
+
 export const authenticate = async (username, password) => {
     let response;
     try {
@@ -30,4 +35,9 @@ export const authenticate = async (username, password) => {
     setAuthData(data);
   
     return data;
-  };
+};
+
+export const getAuthData = () => {
+    const authData = localStorage.getItem(AUTH_DATA);
+    return authData ? JSON.parse(authData) : {};
+};

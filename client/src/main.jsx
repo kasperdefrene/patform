@@ -25,6 +25,7 @@ const router = createBrowserRouter([
         path: '/artwork/create',
         element: <CreateArtwork />,
         action: CreateArtwork.action,
+        loader: CreateArtwork.loader,
       },
       {
         path: '/artwork/my-artworks',
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
         path: '/auth/login',
         element: <Login />,
         action: Login.action,
-        // loader: Login.loader,
+        loader: Login.loader,
       },
       {
         path: "artwork/detail/:id/destroy",

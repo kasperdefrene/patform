@@ -214,3 +214,28 @@ li{
 
   
 
+/* login */
+
+.login__text{
+    text-align: center;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+.login__container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: white;
+    color: black;
+}
+
+.shake {
+  animation: var(--animation-shake-x) forwards;
+  animation-duration: 0.5s;
+}
