@@ -246,3 +246,8 @@ li{
   animation: var(--animation-shake-x) forwards;
   animation-duration: 0.5s;
 }
+
+.profile__information{
+    text-align: center; 
+    line-height: 2rem;
+}
