@@ -44,4 +44,13 @@ const createArtwork = async (data) => {
     return true;
   }
 
-export { getArtworks, getArtwork, createArtwork }
+  const getArtworkById = async (id) => {
+    const artwork = await fetchApi({
+      endpoint: `artworks/${id}`,
+      query: { populate: ["owner"] },
+      wrappedByKey: "data",
+    });
+    return unwrapAtributes(artwork);
+  };
+
+export { getArtworks, getArtwork, createArtwork, getArtworkById}
