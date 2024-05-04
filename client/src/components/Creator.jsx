@@ -1,11 +1,12 @@
-const Creator = ({value, onValueChange}) => {
+const Creator = ({value, onValueChange, name}) => {
 
     return (
-        <input 
+        <input className="control__name"
             type="text" 
             value={value} 
             onChange={(e) => onValueChange(e.target.value)}
-            />
+            name={name}
+        />
     );     
 };
 

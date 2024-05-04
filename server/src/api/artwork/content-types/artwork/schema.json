@@ -4,20 +4,59 @@
   "info": {
     "singularName": "artwork",
     "pluralName": "artworks",
-    "displayName": "Artwork"
+    "displayName": "Artwork",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "Values": {
-      "type": "json",
+    "gradientColorOne": {
+      "type": "string",
       "required": true
+    },
+    "gradientColorTwo": {
+      "type": "string",
+      "required": true
+    },
+    "size": {
+      "type": "integer"
+    },
+    "gradientRotation": {
+      "type": "integer"
+    },
+    "gradientOffsetOne": {
+      "type": "integer"
+    },
+    "gradientOffsetTwo": {
+      "type": "decimal"
+    },
+    "xPosition": {
+      "type": "integer"
+    },
+    "yPosition": {
+      "type": "integer"
+    },
+    "stars": {
+      "type": "boolean",
+      "required": false
+    },
+    "slogan": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "artworks"
     }
   }
 }

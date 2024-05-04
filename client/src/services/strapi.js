@@ -4,7 +4,7 @@ const fetchApi = async (
   {
     endpoint,
     query = undefined,
-    wrappedByKey = "data",
+    wrappedByKey = undefined,
     wrappedByList = undefined,
   },
   options
@@ -12,8 +12,6 @@ const fetchApi = async (
   if (endpoint.startsWith("/")) {
     endpoint = endpoint.slice(1);
   }
-
-  console.log("url", `${import.meta.env.VITE_STRAPI_URL}/api/${endpoint}`);
 
   const url = new URL(
     `${import.meta.env.VITE_STRAPI_URL}/api/${endpoint}${
@@ -24,7 +22,14 @@ const fetchApi = async (
   console.log("Fetching...", url.toString());
 
   const res = await fetch(url.toString(), options);
+
   let data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(
+      `Error fetching ${url.toString()} - ${data?.error?.message}`
+    );
+  }
 
   if (wrappedByKey) {
     data = data[wrappedByKey];

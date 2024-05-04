@@ -368,16 +368,31 @@ export interface ApiArtworkArtwork extends Schema.CollectionType {
     singularName: 'artwork';
     pluralName: 'artworks';
     displayName: 'Artwork';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    Name: Attribute.String & Attribute.Required;
-    Values: Attribute.JSON & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    gradientColorOne: Attribute.String & Attribute.Required;
+    gradientColorTwo: Attribute.String & Attribute.Required;
+    size: Attribute.Integer;
+    gradientRotation: Attribute.Integer;
+    gradientOffsetOne: Attribute.Integer;
+    gradientOffsetTwo: Attribute.Decimal;
+    xPosition: Attribute.Integer;
+    yPosition: Attribute.Integer;
+    stars: Attribute.Boolean;
+    slogan: Attribute.String;
+    backgroundColor: Attribute.String;
+    owner: Attribute.Relation<
+      'api::artwork.artwork',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::artwork.artwork',
       'oneToOne',
@@ -754,6 +769,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'manyToOne',
       'plugin::users-permissions.role'
+    >;
+    artworks: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::artwork.artwork'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
