@@ -1,5 +1,6 @@
 import { Link, redirect, useFetcher, useLoaderData } from "react-router-dom";
 import { getAuthData, getMe } from "../../services/auth";
+import ArtworkCard from "../../components/ArtworkCard";
 
 const loader = async ({ request }) => {
   const { user } = getAuthData();
@@ -40,7 +41,9 @@ const Profile = () => {
         <ul>
           {profile.artworks.map((artwork) => (
             <li key={artwork.id}>
-              <Link to={`/artwork/detail/${artwork.id}`}>{artwork.title}</Link>
+              <Link to={`/artwork/detail/${artwork.id}`}>
+                    <ArtworkCard artwork={artwork} />
+              </Link>
             </li>
           ))}
         </ul>

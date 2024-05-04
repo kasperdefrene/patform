@@ -30,11 +30,10 @@ const ArtworkCard = ({artwork}) => {
 
                     <line x1="20" y1="250" x2="95" y2="250" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
-                <h3 className='maker'>Swipe up to {artwork.slogan}</h3>
+                <h3 className="maker">Swipe up to {artwork.slogan}</h3>
             </div>
         <div>
             <p>{artwork.title}</p>
-            <p>{artwork.creator}</p>
         </div>
     </div>
     );

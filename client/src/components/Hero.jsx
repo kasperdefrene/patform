@@ -9,6 +9,7 @@ const Hero = () => {
             </Link>
             <Link to="/artwork/create" className="nav__element">New Artwork</Link>
             <Link to="/artwork/my-artworks" className="nav__element">My Artworks</Link>
+            <Link to="/auth/profile" className="nav__element">Profile</Link>
             <Link to="/auth/login" className="nav__element">Login</Link>
         </div>
     );

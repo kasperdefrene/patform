@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, redirect } from "react-router-dom";
 import Root from "./routes/root";
 import "./styles/style.css";
 import Index from "./routes";
@@ -13,6 +13,9 @@ import MyArtworks from './routes/myArtworks';
 import destroyAction from './routes/destroy';
 import Register from './routes/auth/register';
 import Profile from './routes/auth/profile';
+import User from './routes/user';
+
+import { removeAuthData } from "./services/auth";
 
 
 const router = createBrowserRouter([
@@ -66,6 +69,11 @@ const router = createBrowserRouter([
         path: "artwork/detail/:id/destroy",
         action: destroyAction,
         errorElement: <div>Oops! There was an error.</div>,
+      },
+      {
+        path: "/user/:id",
+        element: <User />,
+        loader: User.loader,
       },
 
     ]
