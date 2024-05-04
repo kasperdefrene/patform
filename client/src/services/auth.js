@@ -68,3 +68,22 @@ export const getAuthData = () => {
     const authData = localStorage.getItem(AUTH_DATA);
     return authData ? JSON.parse(authData) : {};
 };
+
+export const getMe = async () => {
+    const result = await fetch(
+        `${import.meta.env.VITE_STRAPI_URL}/api/users/me?populate=*`,
+        {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${getToken()}`,
+        },
+        }
+    ).then((res) => res.json());
+
+    return result;
+};
+
+export const removeAuthData = () => {
+    localStorage.removeItem(AUTH_DATA);
+};

@@ -1,11 +1,10 @@
 import { Link, useLoaderData, Form } from "react-router-dom";
-import { getArtwork } from "../services/artwork";
+import { getArtworkById } from "../services/artwork";
 
-const loader = async ({params}) => {
+const loader = async ({ params }) => {
     const id = params.id;
-    const artwork = await getArtwork(id);
-    return {artwork};
-    
+    const artwork = await getArtworkById(id);
+    return { artwork };
 };
 
 const artworkDetail = () => {
@@ -17,7 +16,11 @@ const artworkDetail = () => {
                 <h1>{artwork.title}</h1>
                 <dl>
                     <dt>Created by</dt>
-                    <dd>{artwork.creator}</dd>
+                    <dd>
+                        <Link to={`/user/${artwork.owner.data.id}`}>
+                            {artwork.owner.data.attributes.username}
+                        </Link>
+                    </dd>
                 </dl>
                 <button className="back__button">Like&#9825;</button>
             </div>

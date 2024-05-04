@@ -12,6 +12,7 @@ import Login from "./routes/auth/login";
 import MyArtworks from './routes/myArtworks';
 import destroyAction from './routes/destroy';
 import Register from './routes/auth/register';
+import Profile from './routes/auth/profile';
 
 
 const router = createBrowserRouter([
@@ -48,6 +49,11 @@ const router = createBrowserRouter([
         path: "/auth/register",
         element: <Register />,
         action: Register.action,
+      },
+      {
+        path: "/auth/profile",
+        element: <Profile />,
+        loader: Profile.loader,
       },
       {
         path: "/auth/logout",

@@ -24,7 +24,6 @@ const Index = () => {
                     </li>
                 ))}
             </ul>
-            <Link to="/auth/logout">Logout</Link>
         </div>
     );
 };
